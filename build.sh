@@ -8,6 +8,8 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 
 git clone -b fourteen/fog https://github.com/belowzeroiq/device_xiaomi_fog device/xiaomi/fog && \
 
+git clone -b yoru-stock https://github.com/belowzeroiq/artifact-kernel kernel/xiaomi/fog && \
+
 git clone -b fourteen/fog https://github.com/belowzeroiq/vendor_xiaomi_fog vendor/xiaomi/fog && \
 
 git clone https://github.com/LineageOS/android_hardware_xiaomi hardware/xiaomi && \
