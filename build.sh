@@ -16,9 +16,6 @@ repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags && \
 # sync tree
 git clone https://github.com/belowzeroiq/local_manifest.git .repo/local_manifests && \
 
-# clone hardware/xiaomi
-git clone https://github.com/LineageOS/android_hardware_xiaomi hardware/xiaomi && \
-
 # Set up build environment
 source build/envsetup.sh && \
 
