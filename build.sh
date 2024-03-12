@@ -13,16 +13,19 @@ rm -rf packages
 rm -rf prebuilts/clang/host/linux-x86
 rm -rf out/host
 
-# Clone our local manifest.
-git clone https://github.com/belowzeroiq/local_manifest --depth 1 -b fourteen/fog .repo/local_manifests
+ git clone https://github.com/belowzeroiq/local_manifest --depth 1 -b main .repo/local_manifests && 
+ 
+if [ ! 0 == 0 ]
+ then   curl -o .repo/local_manifests https://github.com/belowzeroiq/local_manifest
+ fi 
 
-# Let's sync!
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags --optimized-fetch --prune
-    
-# Define timezone
-export TZ=Asia/Jakarta
+repo sync -c -j$(nproc --all) --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync  && 
 
-# Let's start build!
-. build/envsetup.sh
-lunch lineage_fog-userdebug
-m bacon
+export BUILD_USERNAME=Jackie 
+export BUILD_HOSTNAME=crave 
+export KBUILD_BUILD_USER=belowzeroiq 
+export KBUILD_BUILD_HOST= 
+ 
+source build/envsetup.sh && 
+
+lunch lineage_fog-userdebug && make installclean && m bacon
