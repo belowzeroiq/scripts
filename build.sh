@@ -19,6 +19,8 @@ if [ ! 0 == 0 ]
  then   curl -o .repo/local_manifests https://github.com/belowzeroiq/local_manifest
  fi 
 
+repo remote remove github &&
+
 repo sync -c -j$(nproc --all) --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync  && 
 
 export BUILD_USERNAME=Jackie 
