@@ -13,7 +13,7 @@ rm -rf packages
 rm -rf prebuilts/clang/host/linux-x86
 rm -rf out/host
 
- git clone https://github.com/belowzeroiq/local_manifest --depth 1 -b main .repo/local_manifests && 
+ git clone https://github.com/belowzeroiq/local_manifest --depth 1 -b fourteen/fog .repo/local_manifests && 
  
 if [ ! 0 == 0 ]
  then   curl -o .repo/local_manifests https://github.com/belowzeroiq/local_manifest
